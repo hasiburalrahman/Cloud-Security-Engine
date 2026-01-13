@@ -1,6 +1,6 @@
-# Created a private repository with ".gitignore" to prevent credential leaks.
+Created a private repository with ".gitignore" to prevent credential leaks.
 
-# Developed harden.sh to automate firewall configuration (UFW) and security patching. (Standard) 
+Developed harden.sh to automate firewall configuration (UFW) and security patching. (Standard) 
 
 Verified the $1.00 Billing Alarm in AWS CloudWatch.
 
