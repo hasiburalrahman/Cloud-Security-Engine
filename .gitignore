@@ -37,6 +37,6 @@ override.tf.json
 terraform.rc
 
 # SSH Keys
-week-01/assets/security-engine-key
+Week-01/assets/security-engine-key
 *.pem
 *.pub
