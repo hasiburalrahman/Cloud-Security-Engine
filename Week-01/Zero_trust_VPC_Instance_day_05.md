@@ -159,8 +159,8 @@ aws ec2 describe-security-groups \
 
 | Security Control | Before | After | Improvement |
 | :--- | :--- | :--- | :--- |
-| **SSH Attack Surface** | `0.0.0.0/0` (Global) | `<MY_IP>/32` | 99.99% reduction |
-| **ICMP Attack Surface** | `0.0.0.0/0` (Global) | `<MY_IP>/32` | 99.99% reduction |
+| **SSH Attack Surface** | `0.0.0.0/0` (Global) | `<MY_IP>/32` |
+| **ICMP Attack Surface** | `0.0.0.0/0` (Global) | `<MY_IP>/32`| 
 | **Private Subnet Internet Access** | N/A | Blocked | 100% isolation |
 | **Default Route Table Security** | Permissive | Isolated | Hardened |
 | **Network Segmentation** | None | Public/Private tiers | Implemented |
