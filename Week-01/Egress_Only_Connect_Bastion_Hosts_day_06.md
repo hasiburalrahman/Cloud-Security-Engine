@@ -67,14 +67,11 @@ Internet
 - Internet cannot initiate connections to private instances
 - Stateful NAT translation tracks outbound connections
 
-<details>
-  <summary><b>Elastic IP Configuration</b></summary>
-  <p align="center">
-    <img src="./assets/Elastic-IP_day7.png" alt="Elastic IP Configuration">
-    <br>
-    <i>Elastic IP assigned to NAT Gateway for static outbound connectivity</i>
-  </p>
-</details>
+<p align="center">
+  <img src="./assets/Elastic-IP_day7.png" alt="Elastic IP Configuration">
+  <br>
+  <i>Elastic IP assigned to NAT Gateway for static outbound connectivity</i>
+</p>
 
 ### Step 2: Private Route Table Configuration
 
@@ -89,14 +86,11 @@ Internet
 
 **Security Benefit:** Private subnet resources can initiate outbound connections but cannot receive unsolicited inbound traffic.
 
-<details>
-  <summary><b>Private Route Table Configuration</b></summary>
-  <p align="center">
-    <img src="./assets/private-route-table-nat_day7.png" alt="Private Route Table">
-    <br>
-    <i>Private Route Table showing default route (`0.0.0.0/0`) to NAT Gateway</i>
-  </p>
-</details>
+<p align="center">
+  <img src="./assets/private-route-table-nat_day7.png" alt="Private Route Table">
+  <br>
+  <i>Private Route Table showing default route (`0.0.0.0/0`) to NAT Gateway</i>
+</p>
 
 ### Step 3: Security Group Nesting (Identity-Based Security)
 
@@ -118,14 +112,11 @@ Instead of opening SSH to the world (`0.0.0.0/0`), implemented **Security Group 
 - ✅ **Defense in Depth:** Multiple layers of security (Route Tables + Security Groups)
 - ✅ **Audit Trail:** All access goes through a single point (Bastion Host)
 
-<details>
-  <summary><b>Private Security Group Rules</b></summary>
-  <p align="center">
-    <img src="./assets/private-security-group_day7.png" alt="Private Security Group Rules">
-    <br>
-    <i>Private Security Group inbound rules showing source as Security Group ID (identity-based access)</i>
-  </p>
-</details>
+<p align="center">
+  <img src="./assets/private-security-group_day7.png" alt="Private Security Group Rules">
+  <br>
+  <i>Private Security Group inbound rules showing source as Security Group ID (identity-based access)</i>
+</p>
 
 ---
 
@@ -172,14 +163,11 @@ ping google.com
 
 **Actual Result:** ✅ **Success** - Internet connectivity confirmed
 
-<details>
-  <summary><b>Ping Test from Private Server</b></summary>
-  <p align="center">
-    <img src="./assets/ping_success_from_vault_day7.png" alt="Ping Test from Private Server">
-    <br>
-    <i>Successful ping from private server (`10.0.2.89`) to Google via NAT Gateway</i>
-  </p>
-</details>
+<p align="center">
+  <img src="./assets/ping_success_from_vault_day7.png" alt="Ping Test from Private Server">
+  <br>
+  <i>Successful ping from private server (`10.0.2.89`) to Google via NAT Gateway</i>
+</p>
 
 ### Test 4: Inbound Traffic Blocking Verification
 
@@ -195,14 +183,11 @@ ssh ubuntu@<PRIVATE_SERVER_IP>
 
 **Actual Result:** ❌ **Blocked** - Confirmed private server is isolated from inbound internet traffic
 
-<details>
-  <summary><b>Ping Test Comparison</b></summary>
-  <p align="center">
-    <img src="./assets/ping_private_public_day7.png" alt="Ping Test Comparison">
-    <br>
-    <i>Ping test showing private IP unreachable from public internet, confirming isolation</i>
-  </p>
-</details>
+<p align="center">
+  <img src="./assets/ping_private_public_day7.png" alt="Ping Test Comparison">
+  <br>
+  <i>Ping test showing private IP unreachable from public internet, confirming isolation</i>
+</p>
 
 ### Test 5: Security Group Nesting Verification
 
