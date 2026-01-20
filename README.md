@@ -1,6 +1,3 @@
-# Cloud-Security-Engine-180
-Cloud Security 
-
 # 🛡️ Cloud-Security-Engine-180
 > **From Vulnerability Management to Cloud Security Architecture**
 
