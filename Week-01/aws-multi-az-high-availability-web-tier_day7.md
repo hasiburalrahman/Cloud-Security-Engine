@@ -1,4 +1,4 @@
-# High-Availability Multi-AZ Web Architecture on AWS
+# Lab Day 7: High-Availability Multi-AZ Web Architecture on AWS
 
 ## Project Objective
 
