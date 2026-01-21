@@ -1,48 +1,61 @@
-# 🛡️ Cloud-Security-Engine-180
+# Cloud Security Engine: 180-Day Transformation
+
 > **From Vulnerability Management to Cloud Security Architecture**
 
-## 🎯 The Mission
-To transition from a traditional **Vulnerability & Threat Management** specialist to a **Cloud Security Engineer** within 180 days. This repository serves as a living portfolio of my technical journey, focusing on **Infrastructure as Code (IaC)**, **Security Automation**, and **Defensive Cloud Architecture**.
+## Overview
 
-In 2026, finding vulnerabilities is easy—remediating them at scale is where the value lies. My goal is to master the "Self-Healing Cloud" by building automated guardrails that prevent misconfigurations before they occur.
+This repository documents a structured 180-day learning journey to transition from traditional vulnerability and threat management into cloud security engineering. It serves as a portfolio of technical work focused on Infrastructure as Code (IaC), security automation, and defensive cloud architecture.
 
----
-
-## 🏗️ Tech Stack & Learning Goals
-- **Clouds:** AWS (Primary) & Azure (Secondary)
-- **Infrastructure:** Terraform, OpenTofu, Packer
-- **Automation:** Python (Boto3/Azure SDK), Bash, GitHub Actions (CI/CD)
-- **Security:** NIST CSF 2.0, OWASP GenAI Top 10, Zero Trust Architecture
-- **Compliance:** CIS Benchmarks, SOC2 Automation
+**Core Philosophy:** In modern cloud environments, identifying vulnerabilities is straightforward—remediating them at scale is where value is created. This project focuses on building self-healing cloud infrastructure through automated guardrails that prevent misconfigurations before they occur.
 
 ---
 
-## 📈 Roadmap & Progress
+## Technology Stack
 
-| Phase | Focus | Status | Featured Project |
-| :--- | :--- | :--- | :--- |
-| **Month 1** | Cloud Architecture & Networking | 🏗️ In Progress | [The Secure Foundation](./Week-01/) |
-| **Month 2** | Infrastructure as Code (Terraform) | ⏳ Pending | - |
-| **Month 3** | Identity & Access Management (IAM) | ⏳ Pending | - |
-| **Month 4** | Detection & Auto-Remediation | ⏳ Pending | - |
-| **Month 5** | AI Security & LLM Guardrails | ⏳ Pending | - |
-| **Month 6** | Professional Certification & Capstone | ⏳ Pending | - |
+- **Cloud Platforms:** AWS (primary), Azure (secondary)
+- **Infrastructure as Code:** Terraform, OpenTofu, Packer
+- **Automation & Scripting:** Python (Boto3/Azure SDK), Bash, GitHub Actions
+- **Security Standards:** NIST Cybersecurity Framework 2.0, OWASP Top 10, Zero Trust Architecture
+- **Compliance Frameworks:** CIS Benchmarks, SOC2 requirements
 
 ---
 
-## 🛠️ Weekly Build Log
+## Learning Roadmap
+
+| Phase | Duration | Focus Area | Status |
+|-------|----------|-----------|--------|
+| Month 1 | Weeks 1–4 | Cloud Architecture & Networking | In Progress |
+| Month 2 | Weeks 5–8 | Infrastructure as Code (Terraform) | Pending |
+| Month 3 | Weeks 9–12 | Identity & Access Management | Pending |
+| Month 4 | Weeks 13–16 | Detection & Auto-Remediation | Pending |
+| Month 5 | Weeks 17–20 | AI Security & LLM Guardrails | Pending |
+| Month 6 | Weeks 21–24 | Certification & Capstone Project | Pending |
+
+---
+
+## Project Structure
 
 ### [Week 01: The Secure Foundation](./Week-01/)
-- **Built:** A multi-tier VPC with public/private subnet isolation.
-- **Security Goal:** Established least-privilege IAM roles and configured a $1.00 CloudWatch billing "Deadman switch."
-- **Proof of Work:** [Link to Documentation/Screenshots]
+
+**Objectives:**
+- Design a multi-tier VPC with public/private subnet isolation
+- Implement least-privilege IAM roles and policies
+- Configure cost monitoring and alerting mechanisms
+
+**Deliverables:**
+- VPC architecture documentation
+- Hardening scripts and configuration templates
+- IAM policy templates following Zero Trust principles
+- Cost optimization configurations
 
 ---
 
-## 🔐 Security Disclaimer
-This repository is for educational purposes. All credentials, keys, and sensitive variables are managed via `.gitignore` and secret managers. No production secrets are stored in this codebase.
+## Security & Compliance
+
+This repository is intended for educational purposes. All sensitive data, including credentials and API keys, are protected through `.gitignore` exclusions and secret management tools. No production secrets, tokens, or sensitive information are committed to this codebase.
 
 ---
 
-## 📜 License
-This project is licensed under the **MIT License**.
+## License
+
+This project is licensed under the MIT License—see [LICENSE](./LICENSE) file for details.
