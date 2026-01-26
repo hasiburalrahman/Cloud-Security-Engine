@@ -27,6 +27,11 @@ Images are stored in an S3 bucket, consisting of:
 - A secondary "challenge" photo (target image)
 
 ![S3 Bucket](../assets/Day11_data_source.png)
+![Source Image](../assets/Sirius_Black.jpeg)
+![Target Image](../assets/Jim%20Gordon.jpg)
+
+
+
 
 ### 2. IAM Security & Permissions
 
