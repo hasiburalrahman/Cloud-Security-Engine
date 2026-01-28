@@ -1,5 +1,6 @@
 import boto3
 import json
+import missing_module  # type: ignore
 
 rekognition = boto3.client('rekognition')
 
