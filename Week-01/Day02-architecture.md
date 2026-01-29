@@ -43,4 +43,4 @@
 
 5. **Security Verification:** Based on Resource Map, there is no link to Private subnet from the Internet. No security holes.
 
-**Summary:** I transitioned the project from a default, insecure network state to a hardened, multi-tier VPC. I implemented network segmentation to isolate sensitive data and used custom routing to ensure that only designated 'public' zones have an internet path, reducing the overall attack surface of the infrastructure.
+**Summary:** The project architecture evolved from a default, insecure network state to a hardened, multi-tier VPC. Network segmentation isolates sensitive data, and custom routing ensures only designated 'public' zones have internet paths, reducing the overall attack surface of the infrastructure.

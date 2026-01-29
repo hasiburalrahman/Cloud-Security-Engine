@@ -3,7 +3,7 @@
 > **Bridging the gap between finding vulnerabilities and building automated defenses.**
 
 ## 📖 Overview
-This repository documents a structured 180-day transition from Vulnerability Management into **Cloud Security Engineering**. It serves as a living portfolio of technical labs focused on Infrastructure as Code (IaC), serverless security, and defensive cloud architecture.
+This repository documents a structured 180-day portfolio of hands-on cloud security labs focused on **Infrastructure as Code (IaC)**, **serverless security**, and **defensive cloud architecture**.
 
 **Core Philosophy:** Security is not just a checkbox; it is a scalable, automated architecture. This project focuses on "Security-by-Design," moving beyond manual auditing to building self-healing systems.
 
@@ -54,8 +54,10 @@ This repository documents a structured 180-day transition from Vulnerability Man
 
 ---
 
-## 👤 Author
-**Hasibur Rahman** *Vulnerability & Threat Management Specialist at Omnicom* *Targeting: Cloud Security Engineering* *Certifications: CompTIA Security+*
+## � About
+**Hasibur Rahman** | Cloud Security Engineer | CompTIA Security+ Certified
+
+Specialized in cloud architecture, infrastructure hardening, serverless security, and biometric authentication systems.
 
 ---
 *This repository is updated daily/weekly as part of the #CloudSecurity180 challenge.*

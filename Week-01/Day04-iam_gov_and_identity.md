@@ -45,7 +45,7 @@ During the security audit, several identity-based vulnerabilities were identifie
 
 ### 1. RBAC Implementation
 
-**Action:** Created a `Security_Auditors` IAM group with restricted permissions and transitioned from Root account usage to a restricted IAM user.
+**Action:** Created a `Security_Auditors` IAM group with restricted permissions and migrated from Root account usage to a restricted IAM user.
 
 **Implementation Steps:**
 1. Created IAM group: `Security_Auditors`
@@ -179,7 +179,7 @@ Below are the technical artifacts proving the effectiveness of the security cont
 
 ### Key Learnings
 
-1. **RBAC Implementation:** Created a `Security_Auditors` group and transitioned from Root account usage to a restricted IAM user. This demonstrates proper identity governance and reduces the risk of accidental or malicious actions.
+1. **RBAC Implementation:** Created a `Security_Auditors` group and migrated from Root account usage to a restricted IAM user. This demonstrates proper identity governance and reduces the risk of accidental or malicious actions.
 
 2. **Negative Control Testing:** Verified that unauthorized management actions (e.g., `CreateKeyPair`) were explicitly denied and logged. This validates that security policies are working as intended and provides audit trails for compliance.
 

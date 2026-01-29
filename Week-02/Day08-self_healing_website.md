@@ -4,7 +4,7 @@
 
 ## Overview
 
-This exercise demonstrates the transition from a manual, static infrastructure to a fully automated, self-healing cloud environment. By isolating EC2 compute resources in Private Subnets and orchestrating them with Application Load Balancing and Auto Scaling, the architecture maintains high availability and security.
+This exercise demonstrates the architecture evolution from manual, static infrastructure to fully automated, self-healing cloud environments. By isolating EC2 compute resources in Private Subnets and orchestrating them with Application Load Balancing and Auto Scaling, the architecture maintains high availability and security.
 
 **Key Objective:** Achieve zero-downtime recovery from infrastructure failures through automated detection and remediation.
 
