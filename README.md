@@ -1,4 +1,4 @@
-# 🛡️ Cloud Security Engine: 180-Day Transformation
+# 🛡️ Cloud Security Engine
 
 > **Bridging the gap between finding vulnerabilities and building automated defenses.**
 
@@ -11,7 +11,7 @@ This repository documents a structured 180-day portfolio of hands-on cloud secur
 
 ## 📈 Learning Roadmap
 
-| Phase | Duration | Focus Area | Status |
+| Phase | Duration | Focus Area | Status 
 |-------|----------|-----------|--------|
 | **Phase 1** | **Weeks 1–4** | **Secure Networking & Serverless Identity** | **Active (Day 13)** |
 | Phase 2 | Weeks 5–8 | Infrastructure as Code (Terraform) | Pending |
