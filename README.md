@@ -1,12 +1,7 @@
 # 🛡️ Cloud Security Engine
 
-> **Bridging the gap between finding vulnerabilities and building automated defenses.**
-
 ## 📖 Overview
-This repository documents a structured 180-day portfolio of hands-on cloud security labs focused on **Infrastructure as Code (IaC)**, **serverless security**, and **defensive cloud architecture**.
-
-**Core Philosophy:** Security is not just a checkbox; it is a scalable, automated architecture. This project focuses on "Security-by-Design," moving beyond manual auditing to building self-healing systems.
-
+This repository contains a modular framework for architecting and automating security-first environments on AWS. The Cloud Security Engine is designed as a series of integrated modules that implement a defense-in-depth strategy
 ---
 
 ## 📈 Learning Roadmap
