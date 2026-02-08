@@ -71,4 +71,4 @@ def lambda_handler(event, context):
 
     except Exception as e:
         # Returns the exact error message (like the S3 Metadata error)
-        return {"status": "Error", "reason": str(e)}
+        return {"status": "Error", "reason": str(e)} 
