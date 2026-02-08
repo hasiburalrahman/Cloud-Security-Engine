@@ -1,3 +1,4 @@
+# boto3 is pre-installed in AWS Lambda Python runtime
 import boto3
 import time
 import uuid

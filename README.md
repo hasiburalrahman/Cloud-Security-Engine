@@ -12,8 +12,8 @@ This repository contains a modular framework for architecting and automating sec
 
 | Phase | Duration | Focus Area | Status |
 | :--- | :--- | :--- | :--- |
-| **Phase 1** | **Weeks 1–4** | **Secure Networking & Serverless Identity** | **Active (Day 13)** |
-| Phase 2 | Weeks 5–8 | Infrastructure as Code (Terraform) | Pending |
+| **Phase 1** | **Weeks 1–4** | **Secure Networking & Serverless Identity** | **Completed** |
+| **Phase 2** | **Weeks 5–8** | **Infrastructure as Code (Terraform)** | **Active (Day 15)** |
 | Phase 3 | Weeks 9–12 | Threat Detection & Auto-Remediation | Pending |
 | Phase 4 | Weeks 13–16 | DevSecOps & Pipeline Security | Pending |
 | Phase 5 | Weeks 17–20 | AI Security & Governance | Pending |
@@ -33,12 +33,17 @@ This repository contains a modular framework for architecting and automating sec
 * **Day 08-09:** **Resilient Architecture**
     * Deployed a **Highly Available 3-Tier Architecture** using **Application Load Balancers (ALB)** and **Auto Scaling Groups (ASG)**.
 
-#### 🤖 Phase 2: Serverless AI & Identity
+#### 🔐 Phase 1 (continued): Serverless AI & Identity
 * **Day 10-11:** **AI Image Intelligence**
     * Built a serverless system using **AWS Lambda** and **Amazon Rekognition** for automated facial comparison.
-* **Day 12-13:** **The Identity Vault: Serverless Biometric Authentication**
+* **Day 12-14:** **The Identity Vault: Serverless Biometric Authentication**
     * Engineered **Least-Privilege IAM Policies** to restrict service-to-service communication.
     * Integrated **Amazon DynamoDB** to maintain an automated audit trail of access attempts.
+
+#### ⚙️ Phase 2: Infrastructure as Code (Terraform)
+* **Day 15:** **Global Cloud Foundation**
+    * Established secure Terraform remote state backend using **AWS S3** with versioning.
+    * Implemented lifecycle protection and proper `.gitignore` patterns for sensitive IaC files.
 
 ---
 

@@ -36,7 +36,78 @@ override.tf.json
 .terraformrc
 terraform.rc
 
+# Terraform plan outputs
+*.tfplan
+tfplan
+
 # SSH Keys
 Week-01/assets/security-engine-key
 *.pem
 *.pub
+*.key
+id_rsa*
+
+# AWS Credentials (should never be in repo)
+*credentials*
+.aws/
+aws-credentials*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+*.secret
+
+# Backup files
+*.bak
+*.backup
+*.tmp
+*~
+
+# Log files
+*.log
+logs/
+
+# OS generated files
+Thumbs.db
+.Spotlight-V100
+.Trashes

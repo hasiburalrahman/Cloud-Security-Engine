@@ -5,6 +5,7 @@ Analyzes images uploaded to S3 using AWS Rekognition and stores results in Dynam
 Supports only standard image formats (JPG, JPEG, PNG).
 """
 
+# boto3 is pre-installed in AWS Lambda Python runtime
 import boto3
 import urllib.parse
 
