@@ -1,16 +1,16 @@
-# Day 16: Remote State Migration & IAM MFA Governance 🛡️
+# Day 16: Remote State Migration & IAM MFA Governance
 
-## 🎯 Project Vision
+## Overview
 
-Infrastructure as Code (IaC) is only as secure as the **State** it manages. On Day 16, I transitioned from a risky local state model to a professional **Remote Backend** architecture. Simultaneously, I deployed a high-assurance IAM Governance policy to enforce **Multi-Factor Authentication (MFA)** across the environment.
+Infrastructure as Code (IaC) is only as secure as the state it manages. This lab transitions from a local state model to a professional **Remote Backend** architecture, and deploys an IAM Governance policy to enforce **Multi-Factor Authentication (MFA)** across the environment.
 
 ---
 
-## 🏗️ The Architecture: "The Vault & The Gatekeeper"
+## The Architecture: Remote Backend & MFA Gatekeeper
 
 ### 1. The Remote Backend (S3 + Versioning)
 
-We established a **Source of Truth** in the cloud. By moving the `terraform.tfstate` file from a local laptop to an S3 bucket, we achieved:
+A remote state backend was established in the cloud. By moving the `terraform.tfstate` file from a local machine to an S3 bucket, the following was achieved:
 
 | Benefit | Description |
 |---|---|
@@ -20,18 +20,18 @@ We established a **Source of Truth** in the cloud. By moving the `terraform.tfst
 
 ### 2. MFA Governance Policy (Zero Trust)
 
-I authored an IAM policy designed to prevent unauthorized access even if a password is compromised.
+An IAM policy was authored to prevent unauthorized access even if a password is compromised.
 
 - **Logic:** An `Explicit Deny` that triggers if the `aws:MultiFactorAuthPresent` condition is `false`.
 - **Self-Service Loop:** Included specific `Allow` statements for IAM MFA actions, ensuring users can set up their own devices without needing an admin to unlock them.
 
 ---
 
-## 🛠️ Implementation Deep-Dive
+## Implementation
 
 ### Step 1: The State Migration
 
-I configured the `backend.tf` to point to the "Global Bootstrap" bucket created on Day 15.
+The `backend.tf` was configured to point to the "Global Bootstrap" bucket created on Day 15.
 
 ```bash
 terraform init -migrate-state
@@ -62,16 +62,16 @@ The `main.tf` in the `project3-mfa-governance` folder defined the following:
 
 ---
 
-## 🧪 Security Audit & Verification
+## Security Audit & Verification
 
-To prove the security controls were effective before tearing down the lab, I used the **AWS IAM Policy Simulator**:
+Verification was performed using the **AWS IAM Policy Simulator**:
 
 | Parameter | Value |
 |---|---|
 | **Context** | Simulated a user within the `Security_Auditors` group |
 | **Action** | Attempted `s3:ListAllMyBuckets` |
 | **Variable** | Set `aws:MultiFactorAuthPresent` to `false` |
-| **Result** | ❌ **DENIED** |
+| **Result** | Denied |
 
 **Success Criteria:** The policy successfully blocked access, proving the "Gatekeeper" logic works.
 
@@ -81,7 +81,7 @@ To prove the security controls were effective before tearing down the lab, I use
 
 ---
 
-## 📊 Knowledge Synthesis: "Why the Bootstrap Bucket?"
+## Remote State: Why the Bootstrap Bucket?
 
 Even though we destroy the lab projects (like the MFA group) every night to stay within the AWS Free Tier, the **Bootstrap Bucket remains**. It is the "Flight Recorder" of the account.
 
@@ -91,7 +91,7 @@ Even though we destroy the lab projects (like the MFA group) every night to stay
 
 ---
 
-## 🧹 Cleanup Log
+## Cleanup Log
 
 | Action | Detail |
 |---|---|

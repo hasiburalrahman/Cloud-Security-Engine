@@ -1,12 +1,12 @@
 # Day 4: IAM Governance & Identity Remediation
 
-## 📋 Overview
+## Overview
 
 In this lab, I performed a security audit of an AWS environment to identify identity-based risks. I implemented **Role-Based Access Control (RBAC)** and enforced the **Principle of Least Privilege (PoLP)** to secure the infrastructure against unauthorized access.
 
 ---
 
-## 🎯 Objective
+## Objective
 
 The objective of this lab was to:
 
@@ -18,7 +18,7 @@ The objective of this lab was to:
 
 ---
 
-## 🔍 Identification
+## Identification
 
 ### Initial Security Assessment
 
@@ -26,22 +26,22 @@ During the security audit, several identity-based vulnerabilities were identifie
 
 #### **Vulnerability 1: Root Account Usage**
 - **Issue:** Root account being used for routine operations
-- **Risk Level:** 🔴 **Critical**
+- **Risk Level:** Critical
 - **Impact:** Root account has unrestricted access to all AWS services and resources
 
 #### **Vulnerability 2: Missing MFA**
 - **Issue:** No Multi-Factor Authentication enabled for privileged accounts
-- **Risk Level:** 🔴 **Critical**
+- **Risk Level:** Critical
 - **Impact:** Accounts vulnerable to credential compromise
 
 #### **Vulnerability 3: Overly Permissive Access**
 - **Issue:** IAM users with excessive permissions
-- **Risk Level:** 🟡 **High**
+- **Risk Level:** High
 - **Impact:** Violation of Principle of Least Privilege
 
 ---
 
-## 🛠️ Remediation
+## Remediation
 
 ### 1. RBAC Implementation
 
@@ -54,9 +54,9 @@ During the security audit, several identity-based vulnerabilities were identifie
 4. Discontinued root account usage for routine operations
 
 **Result:** 
-- ✅ Root account protected from routine use
-- ✅ IAM users operate with least privilege
-- ✅ Role-based access control established
+- Root account protected from routine use
+- IAM users operate with least privilege
+- Role-based access control established
 
 ### 2. MFA Enforcement
 
@@ -68,22 +68,22 @@ During the security audit, several identity-based vulnerabilities were identifie
 - Verified 100% MFA coverage
 
 **Result:**
-- ✅ All privileged accounts protected with MFA
-- ✅ Defense-in-depth security control implemented
-- ✅ Compliance with AWS security best practices
+- All privileged accounts protected with MFA
+- Defense-in-depth security control implemented
+- Compliance with AWS security best practices
 
 ### 3. Policy Enforcement
 
 **Action:** Implemented IAM policies that explicitly deny unauthorized management actions.
 
 **Result:**
-- ✅ Unauthorized actions are blocked at the policy level
-- ✅ All denied actions are logged in CloudTrail
-- ✅ Principle of Least Privilege enforced
+- Unauthorized actions are blocked at the policy level
+- All denied actions are logged in CloudTrail
+- Principle of Least Privilege enforced
 
 ---
 
-## ✅ Validation
+## Validation
 
 ### Negative Control Testing
 
@@ -95,7 +95,7 @@ To verify the effectiveness of the security controls, **negative testing** was p
 
 **Expected Result:** Access Denied
 
-**Actual Result:** ✅ **Access Denied** - Policy correctly blocked the unauthorized action
+**Actual Result:** **Access Denied** - Policy correctly blocked the unauthorized action
 
 **Evidence:**
 - Console error received when attempting unauthorized action
@@ -105,17 +105,17 @@ To verify the effectiveness of the security controls, **negative testing** was p
 
 **Action:** Reviewed CloudTrail logs to verify that denied actions are properly logged.
 
-**Result:** ✅ **Verified** - All unauthorized attempts are logged with `AccessDenied` error codes
+**Result:** **Verified** - All unauthorized attempts are logged with `AccessDenied` error codes
 
 #### **Test 3: MFA Status Verification**
 
 **Action:** Verified MFA status in IAM Dashboard.
 
-**Result:** ✅ **100% MFA Coverage** - All privileged accounts have MFA enabled
+**Result:** **100% MFA Coverage** - All privileged accounts have MFA enabled
 
 ---
 
-## 🛡️ Audit Evidence
+## Audit Evidence
 
 Below are the technical artifacts proving the effectiveness of the security controls implemented.
 
@@ -154,19 +154,19 @@ Below are the technical artifacts proving the effectiveness of the security cont
 
 ---
 
-## 📊 Key Findings & Results
+## Key Findings & Results
 
 | Control | Before | After | Status |
 | :--- | :--- | :--- | :--- |
-| **Root Account Usage** | Active for routine operations | Protected, IAM users used | ✅ Remediated |
-| **MFA Coverage** | 0% | 100% | ✅ Complete |
-| **RBAC Implementation** | Not implemented | `Security_Auditors` group created | ✅ Implemented |
-| **Policy Enforcement** | Permissive | Least Privilege enforced | ✅ Hardened |
-| **Audit Logging** | Not verified | CloudTrail verified | ✅ Validated |
+| **Root Account Usage** | Active for routine operations | Protected, IAM users used | Remediated |
+| **MFA Coverage** | 0% | 100% | Complete |
+| **RBAC Implementation** | Not implemented | `Security_Auditors` group created | Implemented |
+| **Policy Enforcement** | Permissive | Least Privilege enforced | Hardened |
+| **Audit Logging** | Not verified | CloudTrail verified | Validated |
 
 ---
 
-## 🔧 Tools Used
+## Tools Used
 
 - **AWS IAM:** For identity governance and policy management
 - **AWS CloudTrail:** For security logging and event auditing
@@ -175,7 +175,7 @@ Below are the technical artifacts proving the effectiveness of the security cont
 
 ---
 
-## 💡 Reflection
+## Reflection
 
 ### Key Learnings
 
@@ -189,15 +189,15 @@ Below are the technical artifacts proving the effectiveness of the security cont
 
 ### Security Best Practices Applied
 
-- ✅ **Principle of Least Privilege:** IAM users granted only necessary permissions
-- ✅ **Defense in Depth:** Multiple security controls (RBAC, MFA, policies)
-- ✅ **Audit Logging:** All actions logged in CloudTrail for compliance
-- ✅ **Negative Testing:** Verified controls work by testing unauthorized actions
-- ✅ **Root Account Protection:** Root account secured and not used for routine operations
+- **Principle of Least Privilege:** IAM users granted only necessary permissions
+- **Defense in Depth:** Multiple security controls (RBAC, MFA, policies)
+- **Audit Logging:** All actions logged in CloudTrail for compliance
+- **Negative Testing:** Verified controls work by testing unauthorized actions
+- **Root Account Protection:** Root account secured and not used for routine operations
 
 ---
 
-## 🔗 Related Resources
+## Related Resources
 
 - [AWS IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
 - [AWS CloudTrail Documentation](https://docs.aws.amazon.com/awscloudtrail/)
@@ -206,13 +206,13 @@ Below are the technical artifacts proving the effectiveness of the security cont
 
 ---
 
-## 📝 Lab Metadata
+## Lab Metadata
 
 - **Lab Date:** Day 4
 - **Focus Area:** IAM Governance & Identity Management
 - **AWS Services:** IAM, CloudTrail
 - **Compliance:** CIS AWS Foundations Benchmark
-- **Status:** ✅ Complete
+- **Status:** Complete
 
 ---
 

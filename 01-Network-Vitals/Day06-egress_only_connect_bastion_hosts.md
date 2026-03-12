@@ -1,12 +1,12 @@
 # Day 6: Egress-Only Connectivity & Bastion Hosts (NAT Gateway)
 
-## 📋 Project Overview
+## Project Overview
 
 Day 6 focused on implementing secure, outbound-only internet connectivity for private subnet resources while maintaining network isolation. This lab demonstrates the use of **NAT Gateways**, **Bastion Hosts (Jump Boxes)**, and **Security Group nesting** to create a production-grade network architecture that follows the Principle of Least Privilege.
 
 ---
 
-## 🎯 Objective
+## Objective
 
 To build a secure, production-grade network architecture where:
 
@@ -18,7 +18,7 @@ To build a secure, production-grade network architecture where:
 
 ---
 
-## 🏗️ Architecture Design
+## Architecture Design
 
 ### Network Topology
 
@@ -51,7 +51,7 @@ Internet
 
 ---
 
-## 🛠️ Implementation
+## Implementation
 
 ### Step 1: NAT Gateway Setup
 
@@ -107,10 +107,10 @@ Instead of opening SSH to the world (`0.0.0.0/0`), implemented **Security Group 
   - Outbound: All traffic allowed
 
 **Security Benefits:**
-- ✅ **Zero Trust:** Private server only accessible through authorized Bastion Host
-- ✅ **No IP-based Rules:** Identity-based access using Security Groups
-- ✅ **Defense in Depth:** Multiple layers of security (Route Tables + Security Groups)
-- ✅ **Audit Trail:** All access goes through a single point (Bastion Host)
+- **Zero Trust:** Private server only accessible through authorized Bastion Host
+- **No IP-based Rules:** Identity-based access using Security Groups
+- **Defense in Depth:** Multiple layers of security (Route Tables + Security Groups)
+- **Audit Trail:** All access goes through a single point (Bastion Host)
 
 <p align="center">
   <img src="./assets/private-security-group_day7.png" alt="Private Security Group Rules">
@@ -120,7 +120,7 @@ Instead of opening SSH to the world (`0.0.0.0/0`), implemented **Security Group 
 
 ---
 
-## ✅ Validation & Testing
+## Validation & Testing
 
 ### Test 1: Bastion Host Connectivity
 
@@ -130,7 +130,7 @@ Instead of opening SSH to the world (`0.0.0.0/0`), implemented **Security Group 
 ssh -i ~/.ssh/security-engine-key ubuntu@<BASTION_PUBLIC_IP>
 ```
 
-**Result:** ✅ **Success** - Bastion Host accessible from authorized IP
+**Result:** **Success** - Bastion Host accessible from authorized IP
 
 ### Test 2: Private Server Access via Bastion (Jump Test)
 
@@ -148,7 +148,7 @@ chmod 600 /tmp/private_key
 ssh -i /tmp/private_key ubuntu@<PRIVATE_SERVER_IP>
 ```
 
-**Result:** ✅ **Success** - Private server accessible through Bastion Host only
+**Result:** **Success** - Private server accessible through Bastion Host only
 
 ### Test 3: Outbound Internet Connectivity (NAT Gateway Verification)
 
@@ -159,9 +159,9 @@ ssh -i /tmp/private_key ubuntu@<PRIVATE_SERVER_IP>
 ping google.com
 ```
 
-**Expected Result:** ✅ **Success** - NAT Gateway translating outbound traffic
+**Expected Result:** **Success** - NAT Gateway translating outbound traffic
 
-**Actual Result:** ✅ **Success** - Internet connectivity confirmed
+**Actual Result:** **Success** - Internet connectivity confirmed
 
 <p align="center">
   <img src="./assets/ping_success_from_vault_day7.png" alt="Ping Test from Private Server">
@@ -179,9 +179,9 @@ ping <PRIVATE_SERVER_IP>
 ssh ubuntu@<PRIVATE_SERVER_IP>
 ```
 
-**Expected Result:** ❌ **Timeout/Failure** - Private server has no public IP and no inbound route
+**Expected Result:** **Timeout/Failure** - Private server has no public IP and no inbound route
 
-**Actual Result:** ❌ **Blocked** - Confirmed private server is isolated from inbound internet traffic
+**Actual Result:** **Blocked** - Confirmed private server is isolated from inbound internet traffic
 
 <p align="center">
   <img src="./assets/ping_private_public_day7.png" alt="Ping Test Comparison">
@@ -193,23 +193,23 @@ ssh ubuntu@<PRIVATE_SERVER_IP>
 
 **Verification:** Confirmed that private server only accepts connections from Bastion Host Security Group
 
-**Result:** ✅ **Verified** - Private server only allows SSH from Bastion Host Security Group
+**Result:** **Verified** - Private server only allows SSH from Bastion Host Security Group
 
 ---
 
-## 📊 Security Architecture Comparison
+## Security Architecture Comparison
 
 | Security Aspect | Without NAT/Bastion | With NAT/Bastion | Improvement |
 | :--- | :--- | :--- | :--- |
-| **Private Server Internet Access** | None (no updates possible) | Outbound-only via NAT | ✅ Secure updates enabled |
-| **Inbound Attack Surface** | Direct internet exposure | Completely isolated | ✅ 100% protection |
-| **SSH Access Control** | IP-based (can change) | Identity-based (SG nesting) | ✅ More secure |
-| **Access Point** | Multiple entry points | Single Bastion Host | ✅ Centralized control |
-| **Audit Trail** | Distributed | Centralized (Bastion) | ✅ Better compliance |
+| **Private Server Internet Access** | None (no updates possible) | Outbound-only via NAT | Secure updates enabled |
+| **Inbound Attack Surface** | Direct internet exposure | Completely isolated | 100% protection |
+| **SSH Access Control** | IP-based (can change) | Identity-based (SG nesting) | More secure |
+| **Access Point** | Multiple entry points | Single Bastion Host | Centralized control |
+| **Audit Trail** | Distributed | Centralized (Bastion) | Better compliance |
 
 ---
 
-## 🔐 Security Principles Applied
+## Security Principles Applied
 
 ### 1. Principle of Least Privilege
 - Private servers only have access to what they need (outbound internet)
@@ -235,7 +235,7 @@ ssh ubuntu@<PRIVATE_SERVER_IP>
 
 ---
 
-## 💡 Key Learnings
+## Key Learnings
 
 ### Network Architecture
 
@@ -257,7 +257,7 @@ ssh ubuntu@<PRIVATE_SERVER_IP>
 
 ---
 
-## 💰 Cost Optimization & Cleanup
+## Cost Optimization & Cleanup
 
 ### Resource Cleanup
 
@@ -277,7 +277,7 @@ To maintain Free Tier eligibility and avoid unnecessary costs associated with NA
 
 ---
 
-## 🔧 Tools & Technologies
+## Tools & Technologies
 
 - **AWS VPC:** Virtual Private Cloud infrastructure
 - **AWS NAT Gateway:** Managed Network Address Translation service
@@ -289,7 +289,7 @@ To maintain Free Tier eligibility and avoid unnecessary costs associated with NA
 
 ---
 
-## 🚀 Next Steps
+## Next Steps
 
 1. **Advanced Security:**
    - Implement VPC Flow Logs for network traffic monitoring
@@ -323,7 +323,7 @@ To maintain Free Tier eligibility and avoid unnecessary costs associated with NA
 - **Focus Area:** Egress-Only Connectivity & Bastion Host Architecture
 - **AWS Services:** VPC, NAT Gateway, EC2, Elastic IP, Security Groups
 - **Architecture Pattern:** Jump Box / Bastion Host with NAT Gateway
-- **Status:** ✅ Complete
+- **Status:** Complete
 
 ---
 

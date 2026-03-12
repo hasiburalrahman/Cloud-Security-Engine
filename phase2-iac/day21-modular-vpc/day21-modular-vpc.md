@@ -1,10 +1,10 @@
 # Day 21: Modular VPC Architecture
 ## Phase 2: Infrastructure as Code (Terraform)
 
-### 🎯 Objective
+### Objective
 Transition from monolithic Terraform configurations to a professional, modular directory structure. This lab establishes a reusable networking foundation using input variables and output values to ensure scalability and "Dry" (Don't Repeat Yourself) code principles.
 
-### 🏗️ Architecture Overview
+### Architecture Overview
 This project deploys a secure, baseline AWS networking environment:
 * **VPC:** Custom CIDR block (10.0.0.0/16) with DNS Hostnames enabled.
 * **Internet Gateway:** Attached to the VPC for public egress/ingress.
@@ -13,7 +13,7 @@ This project deploys a secure, baseline AWS networking environment:
 
 
 
-### 📂 Folder Structure
+### Folder Structure
 ```text
 day-21-modular-vpc/
 ├── providers.tf   # AWS Provider & Versioning

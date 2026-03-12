@@ -1,66 +1,70 @@
-Day 20: Secure Compute Capstone - The Keyless Architecture
-🎯 Overview
+# Day 20: Secure Compute Capstone - Keyless Architecture
 
-This project represents the final capstone for Phase 1 (Secure Networking & Identity). We deployed a high-performance ARM64 (Graviton) instance that is completely invisible to the public internet. By eliminating SSH (Port 22) and using AWS Systems Manager (SSM), we have created a "Zero-Trust" management plane.
-🏗 Infrastructure Details
-1. Secure Networking (The "Fortress" Model)
+**Date:** 2026  
+**Phase:** Phase 1 — Secure Networking & Identity  
+**Project:** Capstone
 
-Unlike standard tutorials that open Port 22 for SSH, this VPC has zero inbound ports open.
+---
 
-    Public Subnet: Used only to allow the instance to reach the AWS SSM API.
+## Overview
 
-    Security Group: Configured with an "Egress-Only" policy.
+This project is the final capstone for Phase 1 (Secure Networking & Identity). It deploys a high-performance ARM64 (Graviton) instance that is completely invisible to the public internet. By eliminating SSH (Port 22) and using AWS Systems Manager (SSM), a zero-trust management plane is established.
 
-    [PLACEHOLDER: Add your Security Group Screenshot here]
-    Capture: Go to EC2 > Security Groups > Inbound Rules. It should show "No rules found".
+---
 
-2. Identity-Based Access (SSM Deep Dive)
+## Infrastructure Details
 
-Instead of a static .pem key (which can be stolen or lost), we use AWS Systems Manager (SSM).
+### 1. Secure Networking
 
-    The Handshake: The EC2 instance uses an IAM Instance Profile (our "Passport") to prove its identity to AWS.
+Unlike standard configurations that open Port 22 for SSH, this VPC has zero inbound ports open.
 
-    The Tunnel: The connection is an outbound HTTPS (TLS 1.2) tunnel. This means the server "phones home" to AWS to ask if you want to talk to it.
+- **Public Subnet:** Used only to allow the instance to reach the AWS SSM API.
+- **Security Group:** Configured with an egress-only policy — no inbound rules.
 
-    [PLACEHOLDER: Add your SSM Connection Screenshot here]
-    Capture: Take a screenshot of the "Session Manager" tab inside the EC2 'Connect' menu before you hit the final connect button.
+![Security Group Screenshot](assets/Day20_Security_Group.png)
 
-🔒 Advanced Security: Why Graviton?
+### 2. Identity-Based Access (SSM)
 
-We utilized the t4g.small instance type. In 2026, this is the gold standard for secure cloud compute for three reasons:
-256-bit DRAM Encryption
+Instead of a static `.pem` key file, AWS Systems Manager (SSM) is used for access.
 
-The Graviton processor features dedicated hardware that encrypts every bit of data moving between the CPU and the RAM with AES-256.
+- **The Handshake:** The EC2 instance uses an IAM Instance Profile to prove its identity to AWS.
+- **The Tunnel:** The connection is an outbound HTTPS (TLS 1.2) tunnel. The server initiates an outbound connection to AWS rather than accepting inbound connections.
 
-    Why it matters: Even if a malicious actor physically accessed the AWS data center and "tapped" the motherboard memory traces, the data would be unreadable.
+![SSM Connection Screenshot](assets/Day20_SSM_Connection.png)
 
-    Security Benefit: Provides protection against "Cold Boot" attacks and side-channel memory snooping.
+---
 
-IMDSv2 Enforcement
+## Advanced Security: Why Graviton?
 
-By using Amazon Linux 2023, we enforce the Instance Metadata Service Version 2. This requires a session-oriented "token" to access instance metadata, which effectively neutralizes SSRF (Server-Side Request Forgery) attacks—one of the most common ways cloud servers are breached.
-💻 Lab Validation (Terminal Output)
+The `t4g.small` instance type was selected for three security reasons:
 
-Once logged into the server via the browser-based SSM terminal, we confirmed the environment with the following commands:
+### 256-bit DRAM Encryption
 
-    Architecture Check: uname -m
+The Graviton processor features dedicated hardware that encrypts all data moving between the CPU and RAM with AES-256.
 
-        Expected Output: aarch64 (Confirms Graviton Silicon).
+- **Why it matters:** Even with physical access to the hardware, memory data would be unreadable.
+- **Security Benefit:** Protection against cold boot attacks and side-channel memory snooping.
 
-    Identity Check: aws sts get-caller-identity
+### IMDSv2 Enforcement
 
-        Expected Output: Shows the IAM Role Day20-SSM-Role.
+Amazon Linux 2023 enforces Instance Metadata Service Version 2 (IMDSv2). This requires a session-oriented token to access instance metadata, neutralizing SSRF (Server-Side Request Forgery) attacks.
 
-    [PLACEHOLDER: Add your Terminal Output Screenshot here]
-    Capture: A screenshot of the black SSM terminal window showing the results of both commands above.
+---
 
-💰 Cost Optimization & Cleanup
+## Lab Validation
 
-To adhere to the AWS Credit System constraints:
+After connecting via the browser-based SSM terminal, the environment was verified with:
 
-    T3/T4 Standard Mode: We explicitly disabled "Unlimited Mode" in Terraform to prevent CPU burst charges.
+- **Architecture Check:** `uname -m` → Expected output: `aarch64` (Graviton Silicon)
+- **Identity Check:** `aws sts get-caller-identity` → Expected output: IAM Role `Day20-SSM-Role`
 
-    Automated Teardown: Finalized the lab by running terraform destroy to remove the Public IP and Instance, ensuring no overnight charges.
+![Terminal Output Screenshot](assets/Day20_Terminal.png)
 
-    [PLACEHOLDER: Add your Terraform Destroy Screenshot here]
-    Capture: Your Mac terminal showing "Destroy complete! Resources: 7 destroyed".
+---
+
+## Cost Optimization & Cleanup
+
+- **T4 Standard Mode:** "Unlimited Mode" was disabled in Terraform to prevent CPU burst charges.
+- **Automated Teardown:** `terraform destroy` was run to remove the public IP and instance, ensuring no ongoing charges.
+
+![Terraform Destroy Screenshot](assets/Day20_Destroy.png)

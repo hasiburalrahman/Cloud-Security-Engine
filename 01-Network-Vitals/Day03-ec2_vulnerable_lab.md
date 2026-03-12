@@ -1,12 +1,12 @@
 # Lab Day 3: EC2 Security Hardening & Vulnerability Assessment
 
-## 📋 Objective
+## Objective
 
 To provision a Linux-based cloud asset, simulate unauthorized access attempts, and perform an internal security audit to establish a baseline hardening score. This lab demonstrates the identification, remediation, and validation of security misconfigurations in AWS EC2 instances.
 
 ---
 
-## 🏗️ Infrastructure Deployment
+## Infrastructure Deployment
 
 ### Environment Specifications
 
@@ -23,7 +23,7 @@ The EC2 instance was provisioned with default security group settings, exposing 
 
 ---
 
-## 🔍 Threat Simulation & Log Analysis
+## Threat Simulation & Log Analysis
 
 ### Attack Simulation
 
@@ -55,7 +55,7 @@ sshd[13162]: Connection reset by invalid user hacker-bot [preauth]
 
 ---
 
-## 🛠️ Remediation (Hardening)
+## Remediation (Hardening)
 
 ### Perimeter Hardening Strategy
 
@@ -76,14 +76,14 @@ To mitigate the risk of brute-force attacks and unauthorized scanning, **Perimet
 ### Verification
 
 **Result:** Subsequent connection attempts from unauthorized IPs were dropped by the AWS Network Fabric at the security group level, resulting in:
-- ✅ No new log entries on the host for unauthorized attempts
-- ✅ Reduced attack surface (99.99% reduction in accessible IPs)
-- ✅ Protection against brute-force attacks
-- ✅ Lower system resource consumption
+- No new log entries on the host for unauthorized attempts
+- Reduced attack surface (99.99% reduction in accessible IPs)
+- Protection against brute-force attacks
+- Lower system resource consumption
 
 ---
 
-## 🔬 Internal Vulnerability Audit
+## Internal Vulnerability Audit
 
 ### Security Audit Tool
 
@@ -105,14 +105,14 @@ Utilized **Lynis**, an open-source security auditing tool, to perform a comprehe
 ### Audit Insights
 
 The audit revealed opportunities for **defense-in-depth** security:
-- **Network Layer:** Security group hardening (✅ Completed)
-- **Host Layer:** UFW firewall inactive (⚠️ Opportunity for improvement)
+- **Network Layer:** Security group hardening (Completed)
+- **Host Layer:** UFW firewall inactive (Pending improvement)
 - **Application Layer:** SSH configuration could be further hardened
 - **Monitoring:** Malware scanning not implemented
 
 ---
 
-## ✅ Validation
+## Validation
 
 ### Post-Remediation Verification
 
@@ -145,14 +145,14 @@ aws ec2 describe-security-groups \
 
 ### Validation Results
 
-- ✅ **Perimeter Security:** SSH access restricted to authorized IP
-- ✅ **Attack Surface Reduction:** Unauthorized connection attempts blocked at network layer
-- ✅ **Log Reduction:** No unauthorized attempts reaching the host
-- ✅ **Service Availability:** Legitimate access maintained
+- **Perimeter Security:** SSH access restricted to authorized IP
+- **Attack Surface Reduction:** Unauthorized connection attempts blocked at network layer
+- **Log Reduction:** No unauthorized attempts reaching the host
+- **Service Availability:** Legitimate access maintained
 
 ---
 
-## 📊 Metrics & Impact
+## Metrics & Impact
 
 | Metric | Before | After | Improvement |
 | :--- | :--- | :--- | :--- |
@@ -163,7 +163,7 @@ aws ec2 describe-security-groups \
 
 ---
 
-## 🧹 Conclusion & Resource Hygiene
+## Conclusion & Resource Hygiene
 
 ### Lab Completion
 
@@ -187,7 +187,7 @@ The lab was concluded by performing proper **resource hygiene**:
 
 ---
 
-## 🔗 Related Resources
+## Related Resources
 
 - [AWS Security Groups Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html)
 - [Lynis Security Auditing Tool](https://cisofy.com/lynis/)
@@ -195,7 +195,7 @@ The lab was concluded by performing proper **resource hygiene**:
 
 ---
 
-## 📝 Lab Metadata
+## Lab Metadata
 
 - **Lab Date:** Day 3
 - **Environment:** AWS EC2 (Ubuntu 24.04 LTS)

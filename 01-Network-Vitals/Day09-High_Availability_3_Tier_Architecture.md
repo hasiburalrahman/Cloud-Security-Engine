@@ -2,13 +2,13 @@
 
 **Date:** January 22, 2026 | **Level:** Intermediate / Advanced Networking
 
-## 📌 Executive Summary
+## Executive Summary
 
-Successfully architected and deployed a secure, high-availability 3-tier application on AWS. The project focused on subnet isolation, load balancing, and secure administrative access using the EC2 Instance Connect Endpoint (EICE). Key achievements included resolving complex Linux service permissions and SELinux security contexts on Amazon Linux 2023.
+This project documents the architecture and deployment of a secure, high-availability 3-tier application on AWS. The architecture focused on subnet isolation, load balancing, and secure administrative access using the EC2 Instance Connect Endpoint (EICE). Key challenges addressed included Linux service permissions and SELinux security contexts on Amazon Linux 2023.
 
 ---
 
-## 🏗️ Architecture Design
+## Architecture Design
 
 The infrastructure is divided into three distinct logical layers across two Availability Zones (AZs) to ensure zero downtime.
 
@@ -23,7 +23,7 @@ The infrastructure is divided into three distinct logical layers across two Avai
 
 ---
 
-## 🔐 Security & Networking Implementation
+## Security & Networking Implementation
 
 Implemented "Security Group Chaining" to restrict traffic flow using the principle of least privilege:
 
@@ -36,7 +36,7 @@ Implemented "Security Group Chaining" to restrict traffic flow using the princip
 
 ---
 
-## 🛠️ Troubleshooting & Implementation
+## Troubleshooting & Implementation
 
 ### 1. Network Handshake Verification
 
@@ -75,7 +75,7 @@ nc -zv <rds-endpoint-url> 3306
 
 ---
 
-## ✅ Final Results
+## Final Results
 
 The fully functional architecture successfully:
 - Routes requests through the Application Load Balancer
@@ -86,7 +86,7 @@ The fully functional architecture successfully:
 
 ---
 
-## 🧹 Cost Optimization & Cleanup
+## Cost Optimization & Cleanup
 
 All resources were decommissioned in the following order to optimize AWS spending:
 
@@ -100,9 +100,9 @@ All resources were decommissioned in the following order to optimize AWS spendin
 
 ## Key Learnings
 
-✓ Multi-AZ architecture design for high availability  
-✓ Security Group chaining for zero-trust networking  
-✓ EC2 Instance Connect Endpoint for secure bastionless access  
-✓ Linux service permissions and SELinux troubleshooting  
-✓ Launch Template configuration for infrastructure consistency  
-✓ AWS cost optimization strategies
+- Multi-AZ architecture design for high availability
+- Security Group chaining for zero-trust networking
+- EC2 Instance Connect Endpoint for secure bastionless access
+- Linux service permissions and SELinux troubleshooting
+- Launch Template configuration for infrastructure consistency
+- AWS cost optimization strategies

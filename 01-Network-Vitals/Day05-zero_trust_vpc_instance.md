@@ -1,12 +1,12 @@
 # Day 5: Zero Trust VPC Architecture & Security Hardening
 
-## 📋 Project Overview
+## Project Overview
 
 The goal of Day 5 was to move away from AWS automated setup wizards and manually architect a production-grade **Virtual Private Cloud (VPC)**. This project demonstrates a deep understanding of cloud networking "plumbing," including custom routing, subnet isolation, and security hardening following **Zero Trust** principles.
 
 ---
 
-## 🎯 Objective
+## Objective
 
 To manually design and implement a secure, multi-tier VPC architecture that:
 
@@ -18,7 +18,7 @@ To manually design and implement a secure, multi-tier VPC architecture that:
 
 ---
 
-## 🏗️ Architecture Design
+## Architecture Design
 
 ### Network Topology
 
@@ -61,7 +61,7 @@ I designed a tiered network architecture that separates public-facing resources 
 
 ---
 
-## 🛡️ Security Implementation
+## Security Implementation
 
 ### Defense in Depth Strategy
 
@@ -70,9 +70,9 @@ While **Route Tables** act as the network layer controls, **Security Groups** pr
 ### Security Groups: Instance-Level Firewalls
 
 **Why Security Groups were used:**
-- ✅ **Least Privilege:** By default, AWS denies all inbound traffic. Manually configured only specific protocols needed (SSH and ICMP)
-- ✅ **Stateful Nature:** Leveraged the stateful property of Security Groups—allowing ICMP **Inbound** automatically allows the response **Outbound**, tracking connection state without extra rules
-- ✅ **Zero Trust:** No implicit trust; all traffic must be explicitly allowed
+- **Least Privilege:** By default, AWS denies all inbound traffic. Manually configured only specific protocols needed (SSH and ICMP)
+- **Stateful Nature:** Leveraged the stateful property of Security Groups—allowing ICMP **Inbound** automatically allows the response **Outbound**, tracking connection state without extra rules
+- **Zero Trust:** No implicit trust; all traffic must be explicitly allowed
 
 ### Security Group Configuration
 
@@ -80,7 +80,7 @@ While **Route Tables** act as the network layer controls, **Security Groups** pr
 
 *Security Group Inbound Rules showing restricted access to "My IP" only*
 
-### 🔒 Security Hardening Process
+### Security Hardening Process
 
 **Phase 1: Connectivity Verification**
 - **Initial Test:** Opened Inbound ICMP (Ping) to `0.0.0.0/0` to verify Routing Tables and Internet Gateway were functioning
@@ -92,14 +92,14 @@ While **Route Tables** act as the network layer controls, **Security Groups** pr
 - **After:** `<MY_IP>/32` (single authorized IP address)
 
 **Phase 3: Hardening Outcome**
-- ✅ Instance remains reachable for diagnostics from authorized IP
-- ✅ Instance is "invisible" to the rest of the public internet
-- ✅ Prevents automated IP scanning and potential attacks
-- ✅ **Optional:** ICMP inbound rules can be deleted for complete stealth (no ping response)
+- Instance remains reachable for diagnostics from authorized IP
+- Instance is "invisible" to the rest of the public internet
+- Prevents automated IP scanning and potential attacks
+- **Optional:** ICMP inbound rules can be deleted for complete stealth (no ping response)
 
 ---
 
-## ✅ Validation Results
+## Validation Results
 
 ### Testing Methodology
 
@@ -112,9 +112,9 @@ To verify the architecture, I launched an EC2 instance (`Network-Probe-01`) into
 ping <EC2_PUBLIC_IP>
 ```
 
-**Expected Result:** ✅ **Success** - ICMP packets should be allowed from authorized IP
+**Expected Result:** **Success** - ICMP packets should be allowed from authorized IP
 
-**Actual Result:** ✅ **Success** - Connectivity confirmed
+**Actual Result:** **Success** - Connectivity confirmed
 
 ![Ping Test Success](./assets/ping_pass_and_fail.png)
 
@@ -122,9 +122,9 @@ ping <EC2_PUBLIC_IP>
 
 ### Test 2: Ping Test from Unauthorized IP
 
-**Expected Result:** ❌ **Timeout/Failure** - ICMP packets should be blocked from unauthorized IPs
+**Expected Result:** **Timeout/Failure** - ICMP packets should be blocked from unauthorized IPs
 
-**Actual Result:** ❌ **Blocked** - Security group correctly filtering unauthorized traffic
+**Actual Result:** **Blocked** - Security group correctly filtering unauthorized traffic
 
 ### Test 3: Route Table Verification
 
@@ -133,7 +133,7 @@ ping <EC2_PUBLIC_IP>
 2. Confirmed Private Subnet has **no route** to Internet Gateway
 3. Verified Main-Safety-Net table has no internet routes
 
-**Result:** ✅ **All routing rules verified**
+**Result:** All routing rules verified
 
 ### Test 4: Security Group Rule Verification
 
@@ -151,11 +151,11 @@ aws ec2 describe-security-groups \
 | tcp  | 22  | 22  | <MY_IP>/32 |
 ```
 
-**Result:** ✅ **Rules correctly restricted to authorized IP**
+**Result:** Rules correctly restricted to authorized IP
 
 ---
 
-## 📊 Security Metrics
+## Security Metrics
 
 | Security Control | Before | After | Improvement |
 | :--- | :--- | :--- | :--- |
@@ -167,7 +167,7 @@ aws ec2 describe-security-groups \
 
 ---
 
-## 🔐 Zero Trust Principles Applied
+## Zero Trust Principles Applied
 
 1. **Never Trust, Always Verify:**
    - No implicit trust for network traffic
@@ -191,7 +191,7 @@ aws ec2 describe-security-groups \
 
 ---
 
-## 💡 Key Learnings
+## Key Learnings
 
 ### Network Architecture Insights
 
@@ -208,7 +208,7 @@ aws ec2 describe-security-groups \
 
 ---
 
-## 🔧 Tools & Technologies
+## Tools & Technologies
 
 - **AWS VPC:** Virtual Private Cloud infrastructure
 - **AWS EC2:** Compute instances for validation
@@ -219,7 +219,7 @@ aws ec2 describe-security-groups \
 
 ---
 
-## 🚀 Next Steps
+## Next Steps
 
 1. **Advanced Security:**
    - Implement Network ACLs for additional network layer control
@@ -238,7 +238,7 @@ aws ec2 describe-security-groups \
 
 ---
 
-## 🔗 Related Resources
+## Related Resources
 
 - [AWS VPC Documentation](https://docs.aws.amazon.com/vpc/)
 - [AWS Security Groups Best Practices](https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html)
@@ -247,14 +247,14 @@ aws ec2 describe-security-groups \
 
 ---
 
-## 📝 Lab Metadata
+## Lab Metadata
 
 - **Lab Date:** Day 5
 - **Focus Area:** Zero Trust VPC Architecture & Network Security
 - **AWS Services:** VPC, EC2, Security Groups, Route Tables, Internet Gateway
 - **Instance Name:** `Network-Probe-01`
 - **VPC Name:** `Main-Prod-VPC`
-- **Status:** ✅ Complete
+- **Status:** Complete
 
 ---
 

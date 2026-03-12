@@ -1,16 +1,16 @@
-# Day 18: Network Segmentation & The "DMZ" Strategy 🏗️
+# Day 18: Network Segmentation & DMZ Strategy
 **Date:** February 15, 2026  
 **Phase:** Phase 2 (Infrastructure as Code — Terraform)  
 **Project:** 04 (Secrets Manager & Network Evolution)
 
 ---
 
-## 🎯 Objective
+## Objective
 To evolve the basic VPC from Day 17 into a production-ready, segmented network architecture. The goal was to implement "Defense in Depth" by physically and logically separating public-facing entry points from private backend resources — all managed through Infrastructure as Code.
 
 ---
 
-## 🏗️ Architecture: "The DMZ & The Vault"
+## Architecture: Public DMZ & Private Subnet
 
 ### Network Topology
 
@@ -27,7 +27,7 @@ The Private Subnet has **no route** to the Internet Gateway. It uses the VPC’s
 
 ---
 
-## 🔐 Security Engineering Highlights
+## Security Engineering Highlights
 
 1. **Network Air-Gapping:** The Private Subnet was created without a route to the Internet Gateway, making it unreachable from the public web.
 2. **Explicit Routing:** Instead of using the "Main" Route Table for public resources, a dedicated **Public Route Table** was created to ensure that only designated subnets have `0.0.0.0/0` access.
@@ -36,7 +36,7 @@ The Private Subnet has **no route** to the Internet Gateway. It uses the VPC’s
 
 ---
 
-## 📸 Evidence of Deployment
+## Evidence of Deployment
 
 ### 1. The Network Resource Map
 *This visual proves the logical separation between the internet-connected zone and the isolated zone.*
@@ -55,7 +55,7 @@ The Private Subnet has **no route** to the Internet Gateway. It uses the VPC’s
 
 ---
 
-## 🛠️ Implementation Deep-Dive
+## Implementation
 
 ### IaC Resources Deployed
 
@@ -81,7 +81,7 @@ igw_id             = "igw-0f7c9fb21117b370c"
 
 ---
 
-## 🚀 Commands Used
+## Commands Used
 
 ```bash
 # Initialize providers and backend
@@ -102,19 +102,19 @@ terraform destroy -auto-approve
 
 ---
 
-## 🧪 Verification Checklist
+## Verification Checklist
 
 | Check | Method | Result |
 |---|---|---|
-| VPC created with correct CIDR | AWS Console / `terraform output` | ✅ `10.0.0.0/16` |
-| Public Subnet has public IP mapping | Console → Subnet settings | ✅ `map_public_ip_on_launch = true` |
-| Private Subnet has NO public IP mapping | Console → Subnet settings | ✅ Disabled |
-| Public Route Table routes to IGW | Console → Route Tables → Routes | ✅ `0.0.0.0/0` → `igw-*` |
-| Private Subnet uses Main RT (no IGW) | Console → Route Tables | ✅ Local route only |
+| VPC created with correct CIDR | AWS Console / `terraform output` | `10.0.0.0/16` |
+| Public Subnet has public IP mapping | Console → Subnet settings | `map_public_ip_on_launch = true` |
+| Private Subnet has NO public IP mapping | Console → Subnet settings | Disabled |
+| Public Route Table routes to IGW | Console → Route Tables → Routes | `0.0.0.0/0` → `igw-*` |
+| Private Subnet uses Main RT (no IGW) | Console → Route Tables | Local route only |
 
 ---
 
-## 📊 Security Architecture Comparison
+## Security Architecture Comparison
 
 | Aspect | Flat Network (Before) | Segmented DMZ (After) |
 |---|---|---|
@@ -125,7 +125,7 @@ terraform destroy -auto-approve
 
 ---
 
-## 🧹 Cleanup Log
+## Cleanup Log
 
 | Action | Detail |
 |---|---|

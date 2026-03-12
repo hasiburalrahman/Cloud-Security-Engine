@@ -6,11 +6,11 @@
 
 ---
 
-## 🎯 Overview
+## Overview
 
-This project established the secure networking baseline for our cloud environment. We deployed a private network (VPC) and a secure credential vault simultaneously to ensure "Security by Design" using Infrastructure as Code.
+This project established the secure networking baseline for the cloud environment. A private network (VPC) and a secure credential vault were deployed simultaneously to ensure "Security by Design" using Infrastructure as Code.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component | Technology |
 |-----------|------------|
@@ -20,7 +20,7 @@ This project established the secure networking baseline for our cloud environmen
 
 ---
 
-## 🔐 Security Key Accomplishments
+## Security Key Accomplishments
 
 1. **Network Isolation:** Deployed a VPC with a `10.0.0.0/16` CIDR block. Verified that the **Main Route Table** remains internal-only, preventing unauthorized internet exposure.
 2. **Zero-Hardcoding Credential Management:** Integrated AWS Secrets Manager to store administrative passwords.
@@ -30,7 +30,7 @@ This project established the secure networking baseline for our cloud environmen
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### Terraform Automation Output
 ![Terraform Automation](../assets/Day17-Automation.png)
@@ -43,7 +43,7 @@ This project established the secure networking baseline for our cloud environmen
 
 ---
 
-## 🚀 Deployment Instructions
+## Deployment Instructions
 
 ```bash
 # Initialize the project and providers
@@ -58,7 +58,7 @@ terraform apply -auto-approve
 
 ---
 
-## 🔍 Verification
+## Verification
 
 - **Secrets Check:**
   ```bash
@@ -68,7 +68,7 @@ terraform apply -auto-approve
 
 ---
 
-## 💰 Cost Management (AWS Free Tier)
+## Cost Management
 
 | Service | Cost |
 |---------|------|
