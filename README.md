@@ -14,8 +14,8 @@ This repository contains a modular framework for architecting and automating sec
 | :--- | :--- | :--- | :--- |
 | **Phase 1** | **Secure Networking & Serverless Identity** | **Completed** |
 | **Phase 2** | **Infrastructure as Code (Terraform)** | **Completed** |
-| Phase 3 | Threat Detection & Auto-Remediation | Pending |
-| Phase 5 | AI Security & Governance | Pending |
+| **Phase 3** | Threat Detection & Auto-Remediation | Pending |
+| **Phase 4** | AI Security & Governance | Pending |
 ---
 
 ### Completed Labs
