@@ -11,7 +11,7 @@ This repository contains a modular framework for architecting and automating sec
 ### Learning Roadmap
 
 
-| Phase | Focus | Status | Featured Project |
+| Phase | Focus Area |
 | :--- | :--- | :--- | :--- |
 | **Month 1** | Cloud Architecture & Networking | 🏗️ In Progress | [The Secure Foundation](./Week-01/) |
 | **Month 2** | Infrastructure as Code (Terraform) | ⏳ Pending | - |
