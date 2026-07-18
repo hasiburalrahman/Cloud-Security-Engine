@@ -10,27 +10,24 @@ This repository contains a modular framework for architecting and automating sec
 
 ### Learning Roadmap
 
-| Phase | | Focus Area | Status |
+| Phase | | Focus Area |
 | :--- | :--- | :--- | :--- |
 | **Phase 1** | **Secure Networking & Serverless Identity** | **Completed** |
 | **Phase 2** | **Infrastructure as Code (Terraform)** | **Completed** |
 | Phase 3 | Threat Detection & Auto-Remediation | Pending |
-| Phase 4 | DevSecOps & Pipeline Security | Pending |
 | Phase 5 | AI Security & Governance | Pending |
-| Phase 6 | Capstone & Cloud Security Specialization | Pending |
-
 ---
 
 ### Completed Labs
 
 #### Phase 1: Infrastructure & Networking Foundation
-* **Day 01-02:** **Setup & Hardening / VPC Architecture**
+*  **Setup & Hardening / VPC Architecture**
     * Designed a multi-tier VPC with public/private subnet isolation and Route Table management.
-* **Day 03-05:** **Compute Hardening & Zero Trust**
+*  **Compute Hardening & Zero Trust**
     * Implemented EC2 security hardening, vulnerability assessments, and Identity Remediation.
-* **Day 06-07:** **High Availability & Connectivity**
+*  **High Availability & Connectivity**
     * Configured NAT Gateways for egress-only connectivity and built a Multi-AZ web architecture.
-* **Day 08-09:** **Resilient Architecture**
+*  **Resilient Architecture**
     * Deployed a **Highly Available 3-Tier Architecture** using **Application Load Balancers (ALB)** and **Auto Scaling Groups (ASG)**.
 
 #### Phase 1 (continued): Serverless AI & Identity
