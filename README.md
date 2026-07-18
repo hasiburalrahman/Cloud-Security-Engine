@@ -11,6 +11,7 @@ This repository contains a modular framework for architecting and automating sec
 ### Learning Roadmap
 
 | Phase | | Focus Area |
+| :--- | :--- | :--- | :--- |
 | **Phase 1** | **Secure Networking & Serverless Identity** | **Completed** |
 | **Phase 2** | **Infrastructure as Code (Terraform)** | **Completed** |
 | Phase 3 | Threat Detection & Auto-Remediation | Pending |
