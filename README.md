@@ -12,7 +12,7 @@ This repository contains a modular framework for architecting and automating sec
 
 
 | Phase | Focus Area |
-| :--- | :--- | :--- | :--- |
+| :--- | :--- |
 | **Month 1** | Cloud Architecture & Networking | 🏗️ In Progress | [The Secure Foundation](./Week-01/) |
 | **Month 2** | Infrastructure as Code (Terraform) | ⏳ Pending | - |
 | **Month 3** | Identity & Access Management (IAM) | ⏳ Pending | - |
