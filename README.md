@@ -11,14 +11,13 @@ This repository contains a modular framework for architecting and automating sec
 ### Learning Roadmap
 
 
-| Phase | Focus Area |
-| :--- | :--- |
-| **Month 1** | Cloud Architecture & Networking | 🏗️ In Progress | [The Secure Foundation](./Week-01/) |
-| **Month 2** | Infrastructure as Code (Terraform) | ⏳ Pending | - |
-| **Month 3** | Identity & Access Management (IAM) | ⏳ Pending | - |
-| **Month 4** | Detection & Auto-Remediation | ⏳ Pending | - |
-| **Month 5** | AI Security & LLM Guardrails | ⏳ Pending | - |
-| **Month 6** | Professional Certification & Capstone | ⏳ Pending | - |
+| Phase | Focus Area | Status |
+| :--- | :--- | :--- |
+| **Phase 1** | Secure Networking & Serverless Identity  | Completed | 
+| **Phase 2** | Infrastructure as Code (Terraform) | Completed |
+| **Phase 3** | Threat Detection & Auto-Remediation | Pending | 
+| **Phase 4** | AI Security & Governance | Pending |
+
 ---
 
 ### Completed Labs
