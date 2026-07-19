@@ -8,18 +8,6 @@ This repository contains a modular framework for architecting and automating sec
 
 ---
 
-### Learning Roadmap
-
-
-| Phase | Focus Area | Status |
-| :--- | :--- | :--- |
-| **Phase 1** | Secure Networking & Serverless Identity  | Completed | 
-| **Phase 2** | Infrastructure as Code (Terraform) | Completed |
-| **Phase 3** | Threat Detection & Auto-Remediation | Pending | 
-| **Phase 4** | AI Security & Governance | Pending |
-
----
-
 ### Completed Labs
 
 #### Phase 1: Infrastructure & Networking Foundation
@@ -50,3 +38,13 @@ This repository contains a modular framework for architecting and automating sec
 Specialized in cloud architecture, infrastructure hardening, and biometric authentication systems.
 
 ---
+
+### Learning Roadmap
+
+
+| Phase | Focus Area | Status |
+| :--- | :--- | :--- |
+| **Phase 1** | Secure Networking & Serverless Identity  | Completed | 
+| **Phase 2** | Infrastructure as Code (Terraform) | Completed |
+| **Phase 3** | Threat Detection & Auto-Remediation | Pending | 
+| **Phase 4** | AI Security & Governance | Pending |
